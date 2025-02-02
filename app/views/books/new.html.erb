@@ -1,0 +1,33 @@
+<div style="text-align: center;">
+  <h1>Add a New Book</h1>
+
+  <%= form_with(model: @book, local: true, url: addbook_path) do |form| %>
+    <div>
+      <%= form.label :title %>
+      <%= form.text_field :title %>
+    </div>
+
+    <div style="margin-top: 10px;">
+      <%= form.label :author %>
+      <%= form.text_field :author %>
+    </div>
+
+    <div style="margin-top: 10px;">
+      <%= form.label :price %>
+      <%= form.number_field :price, step: :any %>
+    </div>
+
+    <div style="margin-top: 10px;">
+      <%= form.label :published_date %>
+      <%= form.date_field :published_date %>
+    </div>
+
+    <div style="margin-top: 20px;">
+      <%= form.submit 'Add Book', style: 'padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;' %>
+    </div>
+  <% end %>
+
+  <div style="margin-top: 20px;">
+    <%= link_to 'Back to Library', root_path, style: 'text-decoration: none; color: #4CAF50;' %>
+  </div>
+</div>

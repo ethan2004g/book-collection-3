@@ -1,0 +1,16 @@
+<div style="text-align: center;">
+  <h1>Book Details</h1>
+  <div style="margin: 20px; padding: 20px; background-color: #f5f5f5; border-radius: 5px; display: inline-block;">
+    <h2><%= @book.title %></h2>
+    <p><strong>Author:</strong> <%= @book.author %></p>
+    <p><strong>Price:</strong> <%= number_to_currency(@book.price) %></p>
+    <p><strong>Published Date:</strong> <%= @book.published_date&.strftime('%B %d, %Y') %></p>
+  </div>
+  <div style="margin-top: 20px;">
+    <%= link_to 'Edit', edit_book_path(@book.title), style: 'margin: 0 10px; text-decoration: none; color: #4CAF50;' %>
+    <%= link_to 'Remove', "/remove/#{@book.title}/confirm", style: 'margin: 0 10px; text-decoration: none; color: #f44336;' %>
+  </div>
+  <div style="margin-top: 20px;">
+    <%= link_to 'Back to Library', root_path, style: 'text-decoration: none; color: #4CAF50;' %>
+  </div>
+</div>
