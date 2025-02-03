@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :user_books
+  resources :users
   resources :books
   root 'books#index'
   get '/books', to: redirect('/') 
